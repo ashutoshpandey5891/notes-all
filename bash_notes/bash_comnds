@@ -1,0 +1,76 @@
+# ls -d */ : to list all directories only
+# tar -xzf : extract tar.gz files
+# tar -xvf :extract .tgz files
+# tar -xvjf : extract .tar.bz2 files.
+# du -sh :to find the size of a directory(-h for file)
+# ls -l | wc -l : count the number of files 
+# rsync -a file dest : merge copy
+# date +"%Y-%m-%d_%Hh-%Mm-%Ss" : give date in format
+# more /var/run/reboot-required.pkgs : check which apps require reboot
+# crontab -e : set cronjobs 
+# awk -F <delimeter> '{print $x}' : print out parts output
+# cat /etc/upstream-release/lsb-release get ubuntu version details 
+# cat /etc/os-release : get os version details and ubuntu details
+# find <dir> -size <size in bytes>c -mindepth <level> -group <groupname> -user <user name>: find files
+# sort <filename> | uniq -c : find repeated lines in a text file
+# base64 -d <filename> : decode base64 data
+# xxd -p -r <hex text with any spaces and new lines> : convert hex text wihtout line numbers and canonical form to ASCII 
+# diff file1 file2 : tells the difference between files(< denotes lines in file1, > lines in file2)
+
+########## hardware #######
+# sudo lshw -short : hardware config 
+# nproc : shows #of cores
+
+########## users ##########
+# usermod -aG sudo username : add username to sudoers list
+# sudo -i : superuser
+# sudo useradd -m username : create new user
+# passwd username : set password for user
+# cut -d: -f1 /etc/passwd : get list of all users
+            or 
+# awk -F: '{ print $1 }' /etc/passwd
+ 
+########## network ###########
+# ifconfig : 
+# iwlist scan iface : scan with interface iface or all in iface is null
+# ss -tupln : show all services running on different ports
+# netstat -ltnp : details of all open ports ans services
+# curl ipinfo.io/<ip address> : get deails of ip address
+
+######### reg-exps ########
+# shopt -s extglob;(-u for disabling)
+#	?(pattern-list)
+#             Matches zero or one occurrence of the given patterns
+#      *(pattern-list)
+#             Matches zero or more occurrences of the given patterns
+#      +(pattern-list)
+#             Matches one or more occurrences of the given patterns
+#      @(pattern-list)
+#             Matches one of the given patterns
+#      !(pattern-list)
+#             Matches anything except one of the given patterns
+
+
+# cp -a :copy all directories and sub directories
+# cd /etc/NetworkManager/system-connections/filename : configuration of 
+#						autosaved wifi
+
+# export variable_name = <variable_value> : add variables to the environment 
+
+# extract files from levels of zip files
+#	bsdtar --strip-components=n -xvf file.zip #n=num of levels
+	
+########### INSTALLING/REMOVING ################
+# apt-get install <package name> : install package name
+# apt-cache search <package name> : search for packages
+# apt-get -o APT::Install-Suggests="true" install <package name> : install with suggests
+
+########## CHECK RESOURCE STATUS ###############
+# htop : process analyzer
+# baobab : gui disk analyzer
+# stacer : best gui analyzer
+
+
+
+################## LINKS FOR MORE HELP ###############
+# https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je
