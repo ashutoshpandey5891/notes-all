@@ -1,0 +1,6 @@
+################ usual errors in linux #################
+
+1) openssl/hmac.h no file or directory : apt-get install libssl-dev
+2) pcap.h no file or directory : apt-get install libpcap0.8-dev
+3) curl.h no file or direectory : apt-get install libcurl4-openssl-dev
+4) SOCIOFLAGS : no such file or directory : apt-get install firmware-linux-nonfree firmware-linux 

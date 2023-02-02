@@ -1,0 +1,3 @@
+############### vmware configuration changes ###################
+
+1) vmware-netcfg : vonfigure vmware networks

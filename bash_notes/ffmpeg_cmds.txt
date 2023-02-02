@@ -1,0 +1,8 @@
+to trim videos : ffmpeg -i input.mp4 -ss 01:10:27 -to 02:18:51 -c:v copy -c:a copy output.mp4
+
+extract an image every 5 seconds from video.webm : ffmpeg -i video.webm -vf fps=5 thumb%04d.jpg -hide_banner(images will be saved as thumb{0001..}.jpg)
+
+extract one image : ffmpeg -i video.webm -ss 00:00:07.000 -vframes 1 thumb.jpg
+
+
+ffmpeg -i <video_name>.mp4 -ss 00:00:00 -to 00:00:55 -vf fps=0.5 <video_name>/front%06d.jpg -hide_banner

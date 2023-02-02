@@ -1,0 +1,32 @@
+############################################ NETWORKING ##########################################
+
+#### CONNECTION UTILITIES ####
+## nmcli :
+# connect to wifi : nmcli dev wifi connect <wifi name> password <password>
+
+#### FOOTPRINTING ####
+## NSLOOKUP
+# nslookup <address> : get ip address
+
+
+#### SERVICES ####
+## TELNET : utility for telnet services (unsecure)
+# telnet <ip adress> <port> : connects to telnet server
+
+## NETCAT : utitlity for tcp and udp connections
+# 
+
+## OPENSSL
+# openssl s_client -connect <address>:<port> : establish a secure connection
+#
+#
+
+
+########### NETWORK SECURITY #############
+#
+### FIREWALL
+#
+# Configure firewall to reject all connections:
+# 	iptables -I INPUT -p tcp --dport <port> -j REJECT --reject-with tcp-reset
+
+

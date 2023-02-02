@@ -1,0 +1,14 @@
+sudo apt-get install apache2
+sudo apt-get install libapache2-mod-wsgi-py3(libapache2-mod-wsgi for python2) 
+sudo apt-get install python3-dev
+sudo a2enmod wsgi
+sudo apt-get install python3-pip
+# install libs
+# opencv(apt-get install build-essential libglib2.0-0 libsm6 libxext6 libxrender-dev)
+
+### letencrypt 
+# renew certificate
+cd letsencrypt
+sudo service apache2 stop
+sudo ./certbot-auto renew
+sudo service apache2 start

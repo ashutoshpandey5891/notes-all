@@ -1,0 +1,26 @@
+############################# Important  docker commands ###########################
+
+#) Installing
+   curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - 
+   echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list : for distros based on debian buster
+   sudo apt-get update
+   # remove any older versions of docker
+   sudo apt-get remove docker docker-engine docker.io containerd runc 
+   # list all versions
+   apt list -a docker-ce
+   # install docker
+   sudo apt install docker-ce
+   (optional) sudo apt-mark hold docker-ce : off auto-update
+   (optional) sudo usermod -aG docker $USER : add user to docker group to run cmnds as non-root
+
+#) Common Commands 
+   1) check status : systemctl status docker
+   2) search for images : docker search <name>
+   3) download an image : docker image pull <name>
+   4) list all downloaded images : docker image ls
+   5) remove image : docker image rm <name>
+   6) start a docker continer : docker container run <name>
+   7) to start an interactive container : docker container -it <name> /bin/bash
+   8) check running containers : docker ps 
+   9) check all containers : docker ps -a
+   10) docker run -it  /bin/bash

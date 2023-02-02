@@ -1,0 +1,21 @@
+####### AWS EC2 ######
+
+1) access instance via ssh
+   ssh -i <path_to_key(.pem)_file> <instance_address>
+2) copy files
+   scp -i <path_to_key(.pem_file)> <file_to_copy> <instance_address>:<where_to_copy>
+3) activate apache app
+   sudo a2ensite /etc/apach2/sites-availabe/<app.conf>
+   sudo a2enmod wsgi
+4) sudo apachectl restart : to restart service
+5) sudo apachectl start/stop : start/stop service
+
+
+#################################### AWS CLI #####################################
+## open datasets
+0) configure aws cli
+   aws configure
+1) list all contents of a certain product
+   aws s3 ls <product-path>
+2) download data from s3 bucket
+   aws s3 sync <product-path> <path-where-to-download>

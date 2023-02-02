@@ -1,0 +1,10 @@
+
+##QUITING OUT OF VIM
+:q : quit
+:wq : write out and quit
+:q! :force quit
+ZZ : write out and quit
+
+##START WRITING
+i : insert in a blank file
+A : append in a file

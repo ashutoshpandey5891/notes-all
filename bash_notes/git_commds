@@ -1,0 +1,56 @@
+git init : to initialize a directory
+git status : to check the current local status
+git add <filename> : to add file 
+git commit -m "message" : to take snapshot 
+git remote add origin https://github.com/username/reponame.git
+git remote -v : 
+git push origin master : to upload changes to the remote repo
+
+git help
+
+#update a file
+git add
+git add --all 
+git commit
+git pull origin master
+git push origin master
+
+############# git useful commands ##################
+git config --global user.name : to see global username
+git log : commit history
+git diff : shows changes between staged(added) and unstaged files
+git diff --staged : shows modifications in the latest staging
+git reset HEAD <filename> : unstages the latest commit
+git checkout --filename : restore the file to its last commit
+git commit -a -m "message" : adds and commits tracked files
+git reset --soft HEAD^ : undo commit and move to staging area
+git reset --hard HAED^ : undo the last commit and staging
+git commit --amend -m "message" : add things to the last commit
+
+### remotes ###
+git remote add <name> <address> : add remote named <name>
+git remote rm <name> : delete remote 
+git push -u <name> <branch> : push modifics to remote name branch 
+git remote show origin : 
+
+### branching ###
+git branch : to see current branch 
+git checkout -b <name> : create and move to the branch 
+git branch <name> : create a new branch named <name>
+git checkout <branch name> : move to differnet branch 
+git merge <branch name> : merges branches in master
+git branch -d <branch name> : delete the branch  
+git branch -r : show all branches(including remotes)
+git checkout -b <localname> <remoteName> : checkout remote branch with localname
+
+### push and pull ####
+git push -u <remote> <branch> : push changes
+git pull -u <remote> <branch> : pull repo
+
+#### MISC ####
+git rev-list --all --objects : get all objects in the pack files (all commits and blobs)
+git cat-file -p <object hash from packfile> : prints data in object
+
+
+
+

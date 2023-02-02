@@ -1,0 +1,18 @@
+################ important arch commands ##############
+
+## installing,updating,removing a package ##
+1) pacman -S <package_name> : install from official repos
+2) Insatlling from arch user repository : 
+	download PKGBUILD archive,extract,verify and run in the folder: makepfg -sri  
+3) pacman -Syu : update the system
+4) pacman -R <package_name> : removing a package
+5) pacman -Rs <package_name> : removing a package with dependancies   
+
+## starting and stopping services ##
+1) systemctl start/stop/enable/restart example.service : starts example.service
+2) systemctl enable/restart Networkmanager : starts network manager
+  
+
+## system-wide and user specific ##
+1) /etc/bash.bashrc contains system-wide conf
+2) ~/.bashrc contains user specific conf

@@ -1,0 +1,4 @@
+##################################### SSH ###############################################
+ 
+1) ssh <username>@ip -p <port no>: get ssh access
+2) scp filename <username>@<ip>:path/to/copy

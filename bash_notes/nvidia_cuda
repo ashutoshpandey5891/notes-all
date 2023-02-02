@@ -1,0 +1,11 @@
+#################################################### CUDA COMMANDS ###################################
+
+1) check cudnn version : 
+	cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
+## testing ##
+# check if cudnn is working
+#    cp -r /usr/src/cudnn_samples* $HOME
+#    cd cudnn_samples/mnistCuDNN
+#    make clean && make
+#    sudo ./mnistCUDNN

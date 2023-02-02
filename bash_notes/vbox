@@ -1,0 +1,6 @@
+###################################### Important Vbox Notes ###################################
+
+##### Linux Guest #######
+
+# install vbox utils for full screen
+	sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
