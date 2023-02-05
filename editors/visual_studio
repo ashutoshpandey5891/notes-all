@@ -1,0 +1,5 @@
+######################################## VISUAL STUDIO SHORTCUTS ##############################################
+
+## SEARCH AND REPLACE WITH REG-EXP
+1) src="(.\S+)" replace with src="{{url_for('static',filename='$1')}}"
+

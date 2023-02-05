@@ -1,0 +1,19 @@
+###################### WEB APP Information gathering tools ################################
+
+1) WHATWEB 
+# used to find out technologies used and their versions in the webapp
+# USAGE : 
+	whatweb -v <target>
+
+2) DIRB 
+# scans for directories not found in page
+# USAGE
+	
+
+3) NIKTO
+# WEBSITE INFORMATION GATHERING TOOL
+# USAGE
+	nikto -H : get options
+	nikto -h <hosturl / ip address> : scan uel for vulnerabikities
+	eg - nikto -h bhu.ac.in
+	

@@ -1,0 +1,7 @@
+####### Common tools for breaking wifi ##########
+
+1) Aircrack-ng :
+   airmon-ng start <wireless interface> : to start moitor mode
+   airodump-ng <interface>
+   airodump-ng -bssid <mac-id> -c <# channel> --write <filename>
+   aircrack-ng <filename> -w <wordlist>

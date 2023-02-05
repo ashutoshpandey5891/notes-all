@@ -1,0 +1,21 @@
+################################ Kubernetes Imp Notes ##################################
+
+#### Deployment Process ####
+ 
+1) Develop the application
+2) create docker file
+3) enable kubernetes docker environment
+4) build docker image
+5) run the image deployment to a kubernetes container
+6) create kubernetes service
+7) query the service url and port 
+
+#### Useful tools ####
+
+1) kubeadm : command for installing kubernetes
+2)kubespeay : tool for creating high availability clusters
+3) kops: aws tool for installing and maintainance of clusters
+4) kube-aws : cli for kubernetes deletion,creation,upgrades
+5) az aks : utility for kubernetes on azure
+
+#### Kubernetes installation ####

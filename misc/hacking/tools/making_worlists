@@ -1,0 +1,29 @@
+############## Important password cracking tools #####################
+
+#) CRUNCH
+   # Important options
+   1) -o <output_filename> : write to output filename
+   2) -t <pattern> : generate words which follow a certain pattern 
+		@ -> lowercase character
+		, -> uppercase character
+		% -> numbers
+		^ -> symbols
+   # Important commands
+   1) crunch <min> <max> <options> | aircrack-ng -w - <handshake cap file> -b <target bssid> : pipe passwords into aircrack-ng so that passwords dont need to saved
+
+
+#) CUPP
+   # installation and commands
+   1) git clone https://github.com/Mebus/cupp.git : clone the repo
+   2) ./test_cupp.py : to test dependancies
+   3) ./cupp.py -i : starts cupp in interactive mode
+
+#) RAINBOW TABLES
+   # creating rainbow tables from wordlist for wifi cracking
+   1) airolib-ng <output_filename> --import essid essid.txt(file containing essid)
+   2) airolib-ng <output_filename> --import passwd <password list>
+   3) airolib-ng <output_filename> --stat : shows current stats
+   4) airolib-ng <output_filename> --batch : compute hashes
+   5) airolib-ng <output_filename> --clean all
+   # cracking wifi passwords in handshake files
+   1) aircrack-ng -r <output_filename> <handshake filename>

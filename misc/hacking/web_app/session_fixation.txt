@@ -1,0 +1,4 @@
+################################################# SESSION FIXATON ATTACK ###########################################
+
+1) send a link to user which contains a fixed session id and ask user to login using this link
+2) use the fixed session id to log in in the users account by changing cookie value

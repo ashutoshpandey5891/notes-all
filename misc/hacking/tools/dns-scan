@@ -1,0 +1,9 @@
+########## important dns scanning tools #########
+
+### dnscan : python tool that  uses a wordlist to resolve valid subdomains
+# install : git clone https://github.com/rbsec/dnscan.git;cd dnscan;pip3 install -r requirements.txt
+# search subdomains : ./dsnscan.py -d <domain name> eg : ./dnscan.py -d archerongroup.com
+2) subbrute : fast and uses public resolvers to brute force subdomains
+3) dirsearch : tools to brute force directories 
+
+

@@ -1,0 +1,15 @@
+################################ Postgres SQL commands ######################################
+
+## Installation
+
+## Initialization
+
+# psql --username=<username> --host=<> : start postgres terminal
+
+## Basic Comands
+
+# \l : list all dbs
+# \c <db_name> : connect to db
+# \dt * : list all tables in the current db
+# \q : quit
+# 

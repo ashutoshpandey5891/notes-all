@@ -1,0 +1,6 @@
+################################## Important notes #######################################
+
+1) tests to check ip address registry : 
+	1) DNS reverse-resolution
+	2) traceroute
+	3) whois 

@@ -1,0 +1,19 @@
+################################## BACKDOOR DEVELOP (useful python commands) #################################
+
+##### SOCKET (continuous sending and recieving commands) #####
+
+### Initialization
+# import socket
+# sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM) : initialises a tcp socket instance
+# sock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) : set socket options
+# sock.bind((<ip address : str>,<port number : int>)) : starts socket server at <ip addr>:<port no>
+# sock.listen(<# connects : int>) : starts listening for incoming connections at binded address
+
+### Connect to socket instance
+# sock.connect((<ip address : str>,<port number : int>)) : sends connection request
+# target,ip = sock.accept() : accepts incoming connects
+
+### Communicate 
+# sock.send(message) : sends message to connected machine
+# sock.recv(<# bytes : int>) : accepts given bytes of message
+

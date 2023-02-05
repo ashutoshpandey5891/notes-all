@@ -1,0 +1,30 @@
+############################### Apache Kafka () ###############################
+
+
+### Installation
+# https://kafka.apache.org/quickstart
+
+### Basic Commands
+
+# start zookeper server
+	bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# start kafka server
+	bin/kafka-server-start.sh config/server.properties
+
+# create topic 
+	bin/kafka-topics.sh --create --topic <topic name> --bootstrap-server localhost:9092
+
+# console producer
+	bin/kafka-console-producer.sh --topic news --bootstrap-server localhost:9092
+
+# console consumer
+	bin/kafka-console-consumer.sh --topic news --from-beginning --bootstrap-server localhost:9092
+
+
+### Kafka-python
+
+# Intsallation
+	pip install kafka-python
+
+### Topics

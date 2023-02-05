@@ -1,0 +1,13 @@
+######################## Useful Shell ETL pipeline commands #####################################
+
+### cut <options> text: extract fields from lines
+   ## options
+	1) -c<n1-n2> , -c<n1,n2,n3..> : extract chars at n<*> positions
+	2) -d"<delimeter>" -f<f1-f2>,-d"<delimeter>" -f<f1,f2,f3..> : split by delim and extract f* cols
+	
+
+### tr <options> text: translate/squueze or delete chars
+   ## options
+	1) "[<convert_from>]" "[<convert_to>]" : convert all chrs in format "from" "to"
+	2) -s "<char>" : replaces a sequence of a repeated characters with a single occurrence of that character
+	3) -d "[<pattern>]" : delete all occuraces of pattern

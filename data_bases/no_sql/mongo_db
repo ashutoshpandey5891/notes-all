@@ -1,0 +1,106 @@
+############################# Mongo DB Important Commands #################################
+
+#### Installation
+
+## Local
+
+
+#### Connection
+
+## Mongo Shell
+
+## Mongo Python clinet
+
+# Create connection
+
+	from pymongo import MongoClient
+	user=''
+	password =''
+	host=''
+	connect_url = f'mongodb://{user}:{password}@{host}:27017?authSource=admin'
+	con = MongoClient(connect_url)
+
+# close connection
+	con.close()
+
+#### Basic Commands
+
+### Mongo Python Client
+
+## Basic Operations
+
+# db_names = con.list_database_names() : list all db names
+# Create new db,collection and insert new record
+	db = con.<db_name>
+	collection = db.<collection_name>
+	doc = {...}
+	db.collection.insert_one(doc)
+
+# Query from collection
+	db.collection.find()
+
+
+
+### Mongo Shell
+
+## DB and Collections
+
+# db.version() : shows current DB version
+# show dbs : shows databses present on server
+# use <db_name> : create and use db if not exists else start using it
+# db.createCollection("<collection_nmae>") : create collection
+# show collections : show all collections in current db
+
+## Inserting 
+
+# db.<collection_name>.insert({"key1":"val1",....}) : insert single entry
+
+
+## Updating
+
+# db.<collection_name>.updateMany(<optional_params>,{$set:{<fields_to_set>}}) : update fields_to_Set in matching docs
+# db.<collection_name>.remove(<optional params>) : remove all matching docs
+
+## Querying
+
+# db.<collection_nmae>.findOne(<params>) : find first doc matching params
+# db.<collection_name>.find(<optional params>).(optional)limit(n) : finds top n matching query or returns all(no params) or all
+# db.<collection_nmae>.find(<params>,<properties to display>) : returns only given properties of matching docs , <properties ...> : {"key1":1} : only key1 will be displayed,{"key1":0} : all except key1;
+# db.<collection_name>.count() : get count of docs in collection 
+
+## Indexes
+
+# db.<coll_name>.createIndex({<field on which to create index>:1,<2nd field:1>}) : create index based on fields given for faster searching
+# db.<col_nmae>.getIndexes() : list all indexes for coll_name
+# db.<col_nmae>.dropIndex({<index_to_remove>:1}) : remove indexes for col_name
+
+## Aggregation operators
+# db.<colname>.aggregate([{$limit:n}]) : limit output to top n docs
+# db.<colname>.aggregate([{$sort:{"marks":1}}]) : sort by marks in asc order(-1 for desc)
+# db.<colname>.aggreagte([{"$group":{"_id":"$<field to group by>","avverage":{"$avg":"$<field to average>"}}}]) : group by and average 
+# operators : 
+	1) {"$limit":n}
+	2) {"$sort" : {"$<field to sort by>":<1 or -1 (asc or desc)>}}
+	3) {"$group": {"_id":"$<field to group by>","average":{"$avg":{"$<field to avg by>"}}}}  # $avg,$sum,$min,$max 
+	
+
+## Misc
+
+# for (init;cond;inc) {<statements>} : For loop
+# print(<val>) : print values
+# <query|statement>.explain("executionStats").executionStats.executionMillis : prints execution time for statement/query in milli seconds;
+
+## Import/Export Data
+# Tool installation
+	wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1804-x86_64-	100.3.1.tgz
+	tar -xf mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz
+	export PATH=$PATH:/home/project/mongodb-database-tools-ubuntu1804-x86_64-100.3.1/bin
+
+# Import
+	mongoimport -u root -p <pass> --authenticationDatabase admin --db <dbname> --collection <coll_name> --file <fname>
+
+# Export 
+	1) export as csv
+	mongoexport -u root -p <pas> --authenticationDatabase admin --db <dbanme> --collection <coll_name> --out <fname> --type=csv --fields <f1>,<f2>,...
+	2) export as json
+	mongoexport -u root -p <pas> --authenticationDatabase admin --db <dbanme> --collection <coll_name> --out <fname>

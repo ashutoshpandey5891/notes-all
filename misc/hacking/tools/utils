@@ -1,0 +1,6 @@
+############# Useful commands ######################
+
+1) MACCHANGER
+   ifconfig <iface> down
+   macchanger -r <iface>
+

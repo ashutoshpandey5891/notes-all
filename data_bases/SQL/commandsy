@@ -1,0 +1,130 @@
+####################################### SQL Commands ####################################
+
+### DDL (data definition language) Statemments
+ 
+SHOW DATABASES; show the databases present currently
+CREATE DATABASE <dbname> : creates a database
+USE <dbname> : change database
+SELECT DATABASE() : show currently used database
+DROP DATABASE IF EXISTS <dbname> : delete database
+CREATE TABLE <table name>(fields) : create table with columns
+RENAME TABLES <old_table_name> to <new_table_name>,...
+ALTER : 
+	ALTER TABLE <table name> :
+	ADD COLUMN <colun name> <description>
+	MODIFY COLUMN <column name> <description>
+	DROP COLUMN <column name>
+
+### DML (Data Manipulation Language) Statements
+
+SHOW TABLES : list of tables in the current database
+INSERT INTO <table name> VALUES() : insert values in table
+SELECT * FROM <table name> : show all information in table
+DESCRIBE <table name> : 
+
+ORDER BY
+SELECT <column names> from <table name> ORDER BY <column name> : ordering the 
+data set;
+
+CONCAT
+SELECT CONCAT(column names) FROM <table name>: to concat two or more columns
+
+LIKE : 
+	SELECT <column names> FROM <table name> WHERE <column name> LIKE <string>
+	% denotes any sequence of characters
+	_ denotes any character
+
+DISTINCT :
+	SELECT DISTINCT <column name> FROM <table name>
+COUNT :
+	SELECT COUNT(DISTINCT <column name>) FROM <table name>
+GROUP BY:
+	SELECT <column names> FROM <..> GROUP BY <column
+ names>
+HAVING:
+	SELECT <...> FROM <..> GROUP BY <...> HAVING <conditions> 
+
+DELETE :
+	DELETE FROM <table name> WHERE <conditions>
+
+
+UPDATE:
+	UPDATE <table name> SET <update>
+	WHERE <conditions>
+
+BETWEEN : 
+	SELECT <...> FROM <..> BETWEEN <min value> AND <max value>
+	
+AND (JOINING) :
+	SELECT <...> FROM <table names>
+	WHERE <table1.common_column> = <table2.common_column>
+	AND <more joins if required>
+LEFT JOIN :
+	SELECT <...>
+	FROM <table1> LEFT JOIN <table2>
+	ON <table1.common_column> = <table2.common_column>
+
+LIMIT :
+        SELECT <..>
+        FROM <table names> LIMIT <maximum number of obs
+
+### DATATYPES
+VARCHAR() : variable no of characters
+CHAR() : fixed no of characters
+TIMYINT : -127:128
+INT() : UNSIGNED : non negative integer
+MEDIUMINT() : medium length integer
+FLOAT() : decimal number
+DATE : yyyy-mm-dd
+TIME : hh:mm:ss
+DATETIME : yyyy-mm-dd hh-mm-ss
+TIMESTAMP : yyyymmddhhmmss
+YEAR : yyyy
+ENUM() : mutually exclusive classes
+
+
+### TIME
+## Date formats
+# DATE : YYYYMMDD
+# TIME : HHMMSS
+# TIMESTAMP : YYYYXXDDHHMMSSZZZZZZ : XX -> Months,ZZZZZZ -> Microseconds 
+# Extracting from DateTime
+
+YEAR(),MONTH(),DAY(),DAYOFMONTH(),DAYOFWEEK(),DAYOFYEAR(),WEEK(),HOUR(),MINUTE(),SECOND()
+
+# <dates can be added and substracted with operators : +,->
+
+# Other functions
+NOW() : current time stamp
+
+	
+### MATHEMATICAL FUNCTIONS
+ABS()
+ACOS(),ASIN(),ATAN(),COS(),SIN(),TAN()
+CEILING()
+DEGREES()
+EXP()
+FLOOR()
+LOG()
+MOD()
+PI()
+POWER()
+RADIANS()
+RAND()
+ROUND()
+SQRT()
+STD()
+TRUNCATE
+SUM()
+AVERAGE()
+MIN()
+MAX()
+COUNT()
+ 
+DISTINCT : select only distint elements
+
+### String Manipulation
+RIGHT(var,n) : select rightmost n chars from string
+LEFT(var,n) : select leftmost n chars from string
+UCASE(var) : upper case
+LCASE(var) : lower case

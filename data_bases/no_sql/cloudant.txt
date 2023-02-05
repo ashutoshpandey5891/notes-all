@@ -1,0 +1,72 @@
+####################### CLOUDANT DATABASE COmmands #############################
+
+##### HTTP API COmmands
+
+## GET INFO
+
+1) curl $URL : get status
+2) curl $URL/_all_dbs : get all db list
+
+## DATABASES
+
+0) curl $URL/_all_dbs : get all db list
+1) CURL -X PUT $URL/<db_name> : create new db
+2) CURL -X DELETE $URL/<db_name> : remove db
+
+## Documents
+
+1) Query DOc : curl -X GET $URL/<dbname>/<id>
+2) Creaate new doc
+	curl -X PUT $URL/<dbname>/<doc_id> -d '{"key1":"value1","key2":"value2",...}'
+
+3) Update Doc
+	curl -X PUT $URL/<dbname>/<id> -d '{
+						"k":"v",..
+						"_rev":"<current _rev value of doc>"
+					}'
+4) DELTE DOC
+	curl -X DELETE $URL/<dbname>/<id>?rev=<current "_rev" value>
+
+5) Upload from files
+	curl -XPOST $URL/<dbname>/_bulk_docs -Hcontent-type:application/json -d @<fname>
+
+## Query
+
+curl -X POST $URL/<dbname>/_find -H "Content-type:application/json" -d'{
+		query
+	}'
+
+# Query Format
+
+{
+   "selector": {
+      "_id": {
+         "$gt": "0"
+      }
+   },
+   "fields": [
+      "_id",
+      "_rev"
+   ],
+   "sort": [
+      {
+         "_id": "asc"
+      }
+   ]
+}
+
+## Create INDEX
+
+curl -X POST $URL/<dbname>/_index -H"Content-Type: application/json" -d'{
+	"index":{"fields" : ["<field-name>"]}
+}'
+
+### MISC
+
+## DB import/export tool install
+
+	npm install -g couchimport
+
+## Exporting db as
+	1) csv : couchexport --url $CLOUDANTURL --db diamonds --delimiter ","
+	2) json : couchexport --url $CLOUDANTURL --db diamonds --type jsonl

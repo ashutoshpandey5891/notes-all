@@ -1,0 +1,13 @@
+################################################# NETCAT IMPORTANT COMMANDS ##############################
+
+### IMP OPTIONS ###
+# -v : verbose
+# -l : listen
+# -p : port number/range
+# -h : help
+
+### IMP COMMANDS ###
+# nc -l -p <port number> : listen for incoming tcp connections on port number
+# echo -n "line to send on connect" | nc -l -p <port number> : sends line on connction 
+# nc -v -p <port range> : scan ports and verbose output
+# nc <address> <port> : connect to address

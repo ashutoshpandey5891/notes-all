@@ -1,0 +1,10 @@
+################################## WIRELESS HACKING BASICS ###################################
+
+### CHANGE MAC ADD
+1) ifconfig <interface> down
+   macchanger -r <interface> : assign a random mac  
+
+### ENABLE MONITOR MODE 
+1) airmon-ng check kill <interface>
+   airmon-ng start <interface>
+   

@@ -1,0 +1,135 @@
+############################### CPP (Important notes) ########################
+
+##### OTHERS ######
+
+# // single line comments
+# /* */ multiline comments
+
+##### VARIABLES ######
+
+
+
+### DATA TYPES
+# double : accurate upto 15 decimal , 8 bytes
+# float : accurate upto 6 decimal , 4 bytes
+# int : non decimal numbers , 4 bytes
+# long long : long integers, 8 bytes
+# unsigned int : non negative integers from 0 : 2*32-1 , 4 byes
+# unsigned long long : non neg long long type , 8 bytes
+# short int : -2**15 to 2**15-1 , 2 bytes
+# char : contains string of 1 byte , 1 byte , always use single quotes
+# bool : true/false , 1 byte
+
+### STRINGS
+## (IMP) strings always use double quotes , chars use single quotes
+# string <var name> = <val> : initialize a string
+# stoi(<string variable>) : convert string to int
+# stod(<string variable>) : conver string to double
+## Properties ##
+# str.size() : size of string
+# str.empty() : str empty or not
+# str1.append(str2) : concatenate string
+# str1.compare(str2) : compare strings
+# str2 = str1.assign(str1,<start_idx>,<end_idx>) : assign new string variable
+# str1.find(str2,<start idx>) : find substring
+# str1.insert(<start_idx>,str2) : insert a string starting from start_idx
+# str1.erase(<start_idx>,<end_idx>) : erase substring
+# str1.replace(<start_idx>,<# size to replace>,str2)
+
+
+### ARRAYS
+# INITIALIZATION : 
+	1) <data type> arr_name[<aar_size>];
+	2) <data type> arr_name[<arr_Size>] = {val1,val2,...}
+
+### VECTORS (same as arrays but variable size)
+# Initialization
+	1) vector <data type>/*with gt and lt sign*/ <vector name>(<vector initial size>) // size not necessary;
+	2) vector <data type> name;
+	3) vector of vectors of variable size:
+		# vector <vector<data type>> vec_name;
+## Properties
+# vect.insert(<vect position>,<var to insert>)
+# inserting array in vector : 
+	vect.insert(vect.begin(),<array>+<begin pos>,<array>+<end pos>)
+# vect.at(<idx>) : get value in vector at index
+# vect.push_back(<val>) : inser <val> at the end of vector
+# vect.back() : get last val in vect
+# vect.pop_back() : remove the final value
+# vect.front() : get 1st vector value
+# vect.empty() : 1 if empty 0 else
+# vect.size() : return size
+
+##### UTILITIES ######
+# sizeof(<variable>) : get size of variable
+# rand() % (b-a) + a : generate random numbers between a and b
+# getline(cin,<varibale to store vale>) : get user keyboard input
+# stoi(<string variable>) : convert string to int
+# stod(<string variable>) : conver string to double
+
+##### CONTROL STATEMENTS #######
+
+# switch(expression {
+		case <val>:
+			// code
+			break;
+		default:
+			// code
+	}
+# ternary operator : (expression)?true:false;
+
+########## FIle I/O #########
+# ofstream writer("<filename>",<mode>); : open write stream
+
+# writing in file:
+	if (! write){ // if the write stream is not open
+		return -1
+	}else {
+		writer << <text> << endl;
+		writer.close();
+	}
+# write modes : 
+	1) ios::app : append to file mode
+	2) ios::binary : treat file as binary
+	3) ios::in : open file to read input
+	4) ios::trunc : Default
+	5) ios::out : open file to write output
+
+# ifstream reader("<filename>");
+# reading from file:
+	char letter;
+	if (! reader){ // if read stream is not open
+		return -1
+	}else {
+		for(let i=0;!reader.eof();i++){
+			reader.get(letter);
+			cout << letter;
+		}
+		cout << endl;
+		reader.close();
+	}
+ 
+############# I/O ############
+
+/*boilerplate
+ #include <iostream>
+ using namespace std;
+*/
+
+# Input from standard input
+	
+	int x,y,z;
+	cin >> x;cin >> y;cin >> z;
+	# reading from same line
+	cin >> x >> y >> z;	
+
+# scanf("<input format>",<var to store val>); 
+
+# Output to standard output
+	# output n same line	
+	cout << var1 << var2 << "sme text" << endl;
+	# new lines
+	cout << var1 << endl;
+	cout << var2 << endl;
+
+# printf("<format to output>",<var to output>);

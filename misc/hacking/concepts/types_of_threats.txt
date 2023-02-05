@@ -1,0 +1,15 @@
+#### overview of major types of threats ######
+
+1) Malware : generic term form software that has alicious purpose.(virus,worms,adware,trojans)
+
+2) security breaches : group of attacks that attempt to gain unautorised access to your system.(privilage excalaltion,breaking into servers,cracking passswords)
+
+3) DoS attacks : attacks to prevent legitimate access to your system.(DDoS)
+
+4) web attacks : attack to attempt to breach your website.(SQL injection,cross site scripiting)
+
+5) session hijacking : attempts to take over a session.
+
+6) Insider threats : (the most important one)
+
+7) DNS poisoing : compromises dns servers so that users can be redireccted to malicious website.

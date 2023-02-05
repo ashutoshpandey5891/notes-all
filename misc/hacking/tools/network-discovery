@@ -1,0 +1,10 @@
+#### Major tools used for discovering devices on the same network ####
+
+1) netdiscover :
+	usage : netdiscover -r <target-ip>
+
+2) nmap : zenmap (gui for nmap)
+	usage : 1) ping scan (basic info about all devices connected on the network)
+		   nmap -sn <target-ip>
+		2) quick scan (basic info with open ports )
+		   nmap -T4 -F <target-ip>

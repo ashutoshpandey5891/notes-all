@@ -1,0 +1,19 @@
+######################################## BASIC TOOLS #############################################
+
+### AIRCRACK-NG
+
+   airmon-ng start <wireless interface> : to start moitor mode
+   airodump-ng <interface>
+   airodump-ng -bssid <mac-id> -c <# channel> --write <filename>
+   aircrack-ng <filename> -w <wordlist>
+
+### REAVER 
+   wash -i <interface> : scan networks
+   reaver -i <interface
+
+### HASHCAT
+   converting cap to hccapx 
+	1) url : https://hashcat.net/cap2hccapx/
+ 
+   hashcat -a <attck mode> -m <attack cipher> <file> <wordlist>
+	eg - hashcat -a 0 -m 2500 temp.hccapx rockyou.txt

@@ -1,0 +1,25 @@
+########################### SQL Concepts ###########################
+
+#### SQL statement types
+
+1) DDL (data definition language)
+	
+# Define,change or drop database objects
+# Common DDL statements
+	1) CREATE : to create objs
+	2) ALTER : alter tables and data types
+	3) TRUNCATE : used for del all data in table(not to del table)
+	4) DROP : to del objs
+
+2) DML (Data manipulation language)
+
+# read and modify data
+# CRUD ops (create , read , update and delete rows)
+# Common types
+	# INSERT : insert >=1 rows
+	# SELECT : query
+	# UPDATE : edits rows
+	# DELETE : remove data from rows
+
+ 
+

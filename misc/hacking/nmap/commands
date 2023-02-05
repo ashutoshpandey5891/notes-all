@@ -1,0 +1,50 @@
+################################################### NMAP COMMANDS #############################################
+
+### BASIC SCAN
+1) list scan : enumerates every node in range and performs reverse dns
+	nmap -sL <ip addr range>
+2) ping scan : sends ICMP ECHO_REQUEST packets and listens for responses
+	nmap -sn <ip>
+3) Dry run : see which ips wil be scanned
+	nmap -sL -n <targets>
+
+### resolve dns -> ip
+1) host -t ns <domain name>
+
+### Important options 
+ -v : verbose
+ -O : os detection
+ -sV : service version detection
+ -Pn : skip host discovery
+ -sT : full tcp scan(3-way-handshake) <very loud>
+ -sS : tcp syn scan (only SYN packet sent) <undetectable on target>
+ -sA : tcp ACK scan (only send ACK packets (third step)) <useful for bypassing firewalls (blocked SYN packets)>
+ -sU : udp scan <very slow ,inaccurate>
+
+# Less common options(firewall evasion)
+ -sN : Null Scan 
+ -sF : Fin Scan
+ -sX : Xmas scan 
+  (All these sent malformed packets to port and port responds with RST if closed and no response if open|filtered)
+
+### DETECTION PROBLEMS
+1) nmap --source-port <prt number> <ip add> : change default source port
+2) nmap --data-length <packet-size> <ip add> : change default packet size
+3) nmap -sA <ip add> : blocked syn packets
+4) nmap --spoof-mac <mac-address> <ip-address> : mac address white scanning
+
+### SCRIPTS ###
+1) brute force ssh
+	nmap --script=ssh-brute.nse <target>
+
+2) vulscan and nmap-vulners script
+	cd /home/kali/tools/scanning/nmap-scripts
+	nmap --script vulscan,nmap-vulners -sV <target>
+
+3) installing new scripts
+	sudo wget -O /usr/share/nmap/scripts/<script-name>.nse https://svn.nmap.org/nmap/scripts/<script-name>.nse
+	nmap --script-updatedb 
+
+4) Locating scripts
+	grep <keyword> /usr/share/nmap/scripts/script.db
+ 

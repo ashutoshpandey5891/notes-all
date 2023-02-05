@@ -1,0 +1,7 @@
+########################### LIST OF COMMON ATTACKS ###############################
+
+1) cross site scripting vulnerabilities (XSS)
+2) cross site request forgery (XSRF)
+3) DDoS
+4) remote code execution
+

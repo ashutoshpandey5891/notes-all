@@ -1,0 +1,12 @@
+########################## Mimikatz Imp Commands ####################################
+
+(Tool for retrieving password hashes from windows LSASS)
+
+## Basic commands
+	privilege::debug -> check for privileges (extracting hash requires admin privilege)
+	
+
+
+## Modules
+1) sekurlsa
+	sekurlsa::logonpasswords : extract password hashes from LSASS memory

@@ -1,0 +1,4 @@
+1) three pillars of security : CIA triangle
+1.1 ) confidentiality : is your data confidential
+1.2 ) integrity : does the approach gaurantee the integrity of the data
+1.3 ) accessabiity : is the data available to authorise users

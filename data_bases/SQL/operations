@@ -1,0 +1,14 @@
+############################################ Useful Operations in MYSQL #####################################
+
+### Create number column
+
+@ SET rowindex := -1;
+SELECT @rowindex:=@rowindex + 1,col1,col2,... FROM <table_name> ORDER BY <column>;
+
+eg : computing median
+@rowindex := -1
+SELECT AVG(temp.col) FROM 
+	(SELECT @rowindex:=@rowindex+1 as rowindex,col1 as column FROM <table> ORDER BY col1) as temp
+WHERE temp.rowindex in (FLOOR(@rowindex/2),CEIL(@rowindex/2));
+
+

@@ -1,0 +1,44 @@
+############################# Cassandra DB Notes ###################################
+
+#### Concepts
+
+# KeySpace : Contains one or more tables;defines options for * tables in it,eg replication;
+
+# Tables : Logical entiity that organizes data at cluster and node level acc to given schema;data is stored in rows of columns;tables can be altered,dropped,created without impacting running queries;
+
+# Table Schema : defines at least "primary key" and regular columns of table
+
+# Primary Key : subset of columns of table;mandatory on create table;immutable;has 2 parts: "partition key" and >=1 "clustering keys"(optional)  
+
+#### Installation
+
+
+#### CQL (Cassandra Query Language;similar to SQL)
+
+## is "CASE-INSENSITIVE";stores all table names in lower case
+
+### Basics (all ends with ; , hail ;)
+
+# show host : show details of server connected to
+# show version : get version
+# describe keyspaces : get list of key spaces
+# CREATE KEYSPACE <key_space name> WITH <options> : create new key space
+# CREATE TABLE <table_name> (<columns and keys>) : similar to SQL
+# INSERT INTO <table name> values ()
+# SELECt * FROM <table name> WHERE ...
+# UPDATE <table name> SET <colunm = value> WHERE ...
+# DELETE FROM <table> WHERE ...
+# DROP TABLE <table>;
+# TRUNCATE TABLE <table>;
+
+
+### Special Commands
+# CAPTURE : send output of command to a file
+# CONSISTENCY : show consistency level and set new one
+# COPY : copy data to and from cassandra
+# DESCRIBE : describe current cluster
+# EXIT : termin8 cqlsh session
+# PAGING : enable/disable paging of queries
+# TRACING : EN/DI request tracing
+
+

@@ -1,0 +1,14 @@
+######################################## INFORMATION GATHERING #################################################
+
+### IP address lookup
+1) nslookup:
+	nslookup <ip-address/domain_name>
+
+2) curl
+	curl ipinfo.io/<ip-address>
+
+3) whois 
+	whois <ip-address/domain_name>
+
+4) search all subdomains 
+    spyse

