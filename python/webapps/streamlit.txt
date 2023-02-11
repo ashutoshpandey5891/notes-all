@@ -1,0 +1,60 @@
+############# Streamlit Notes #################
+
+import streamlit as st
+
+#### Text Functions
+
+# st.text("<text>") : display text 
+# st.header() : dipslay heading
+# st.subheader()
+# st.title()
+# st.markdown()
+
+## Debug Texts
+
+# st.success()
+# st.warning()
+# st.info()
+# st.error()
+# st.exception()
+# st.help(function_name)
+
+## Special Formats
+
+# st.dataframe(df) : Display pandas dataframe (interacive)
+# st.table(df) : Display pandas dataframe (non-interacive)
+# st.json(dict/json) : Display python dict/json
+# st.code(code_string,language='<language>') : dsiplay code
+
+#### Widgets
+
+# st.text_input("<display val>",max_chars = ,type = "<password>")
+# st.test_area("<display val>",height= )
+# st.number_input("<display val>",min_val,max_value,range)
+# st.date_input("<display val>",min_date,max_date)
+# st.beta_color_picker("<display val>")
+# st.time_input("<display val>")
+# st.button("<display val>",key="<id>")
+# st.checkbos("<display val>",("opt1","opt2",...))
+# st.beta_expander("<display val>")
+# st.selectbox("<display val>",<list/tuple of  options>,default='')
+# st.multiselect("<display val>",<list/tuple of  options>,default='')
+# st.slider("<display val>",min_val,max_val,range)
+
+#### Media files
+
+## Image files
+
+# from PIL import Image
+# img = st.open("<img_pth>")
+# st.image(img,use_column_width=True)
+    or
+# st.image(<img_url>)
+
+## Video/Audio files
+
+# vid_file = open(file_pth,'rb').read()
+# st.video(vid_file,start_time=3,format='video/mp4')
+
+
+
