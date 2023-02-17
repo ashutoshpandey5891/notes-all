@@ -2,6 +2,23 @@
 
 import streamlit as st
 
+#### Basic Functions
+
+## Page Config
+
+# st.set_page_config(page_title='',
+    page_icon=<any image/emoji>,
+    initial_sidebar_state='auto' # side bar on the left side
+) : set html page config
+
+## Plotting
+# import plotly.express as px
+# fig = ....
+# st.plotly_chart(fig)
+
+## File Uploads
+# st.file_uploader(<prompt>,type=[])
+
 #### Text Functions
 
 # st.text("<text>") : display text 

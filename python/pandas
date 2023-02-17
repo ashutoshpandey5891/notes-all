@@ -1,0 +1,65 @@
+################################### Pandas Functions #####################################
+
+
+########## DataFrame Methods ################
+
+#### Basics
+df.info() : gets info about each columns
+df.describe()
+df.head(n) : get top n rows
+df.value_counts() : to count value for different categories 
+df.merge() : merges two dfs using a common column
+df.drop([<indexes/col names>],axis) : drop from df
+df.loc[] : gives the element at the given location
+df.iloc[] : gives the element at the given location in ints
+df.copy(deep=True) : create new copy
+df.concat([<dfs>],axis=0) : concat dfs
+df.assign(<new col name> = <computation based on existing cols>) : creates new df with new col without effecting old df
+df.query('<query>') : filter df based on query
+df.sort_values(by,ascending=False) : sort by column(s)
+df.transpose() or df.T 
+df.rename(columns={},index={}) : change index/column names
+
+#### EDA
+df.sample(n,replace=False,random_state=1) : sample n rows randomly 
+df.plot(kind) : plot the dataframe
+pd.pivot_table(df,index,values,aggfunc)
+df.groupby(by)
+
+#### NA elements
+df.isnull() : is an element null or not
+df.fillna() : fill na elements of the dataframe
+df.notnull() : elements which are not nan
+df.dropna(axis,thresh) : drop all rows with na values
+
+
+#### Data Processing
+df.drop([cols..],axis=1) : drop columns
+pd.df.reset_index() : resets the index of a dataframe
+pd.df.set_index() : set a column as index
+df.drop_duplicates(inplace = False)
+
+#### Writing to file
+df.to_csv(<path>,index=False,columns = [])
+
+#### Iterating
+# Converting to dictionary (fastest method)
+	df_dict = df.to_dict()
+	for row in df_dict:
+		<row ops>
+
+# Numpy iteration
+	for row in df.values:
+		<row ops>
+
+# Itertuples
+	for row in df.itertuples():
+		<row ops>
+
+# iterrows
+	for row in df.iterrows():
+		<row ops>
+
+
+
+
