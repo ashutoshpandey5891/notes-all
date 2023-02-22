@@ -1,0 +1,21 @@
+############ OpenAi Api Commands #############
+
+#### Installation and importing
+pip install openai
+import openai
+
+#### Moderation
+	Checks to see if the content voiates any policies which might lead to account ban,
+	guide : platform.openai.com/docs/guides/moderation
+
+	resp = openai.Moderation.create(input = '<text>')
+	output = resp['results'][0]
+
+#### Calling the api
+
+## Completion
+
+resp = openai.Completion.create(model='',prompt='',max_tokens='')
+
+
+

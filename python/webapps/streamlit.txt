@@ -21,6 +21,7 @@ import streamlit as st
 
 #### Text Functions
 
+# st.write() : universal function
 # st.text("<text>") : display text 
 # st.header() : dipslay heading
 # st.subheader()
@@ -58,13 +59,14 @@ import streamlit as st
 # st.multiselect("<display val>",<list/tuple of  options>,default='')
 # st.slider("<display val>",min_val,max_val,range)
 
+
 #### Media files
 
 ## Image files
 
 # from PIL import Image
 # img = st.open("<img_pth>")
-# st.image(img,use_column_width=True)
+# st.image(img,use_column_width=True,width,height)
     or
 # st.image(<img_url>)
 
