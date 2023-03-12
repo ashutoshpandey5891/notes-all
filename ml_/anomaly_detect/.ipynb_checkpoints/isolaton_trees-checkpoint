@@ -18,6 +18,6 @@ After an ensemble of iTrees(Isolation Forest) is created, model training is comp
 ## python implementation
 
 from sklearn.ensemble import IsolationForest
-model = IsolationForest(n_estimators,max_samples,contamination,random_state)
+model = IsolationForest(n_estimators,max_samples,contamination,random_state) # contamination parameter specifies the percentage of observations we believe to be outliers
 model.fit(data)
 anomaly_scores = model.predict(data)
