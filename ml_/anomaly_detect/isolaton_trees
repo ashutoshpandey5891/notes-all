@@ -1,0 +1,23 @@
+################ Isolation Forest ###############
+
+
+## Works similar to random forest, ie made from decision trees.
+## Unsupervised Method
+## In an isolation forest randomly sub sampled data is processed in a tree structure based on random selected features, the samples that travel deeper into the tree are less likely to be anomalies, similarly samples on the shorter branches are more likely to be anomalies, sicne it is easier to seperate them.
+
+## Let us look at the complete algorithm step by step:
+
+1)  When given a dataset, a random sub-sample of the data is selected and assigned to a binary tree.
+2) Branching of the tree starts by selecting a random feature (from the set of all N features) first. And then branching is done on a random threshold ( any value in the range of minimum and maximum values of the selected feature).
+3) If the value of a data point is less than the selected threshold, it goes to the left branch else to the right. And thus a node is split into left and right branches.
+4) This process from step 2 is continued recursively till each data point is completely isolated or till max depth(if defined) is reached.
+5) The above steps are repeated to construct random binary trees.
+
+After an ensemble of iTrees(Isolation Forest) is created, model training is complete. During scoring, a data point is traversed through all the trees which were trained earlier. Now, an ‘anomaly score’ is assigned to each of the data points based on the depth of the tree required to arrive at that point. This score is an aggregation of the depth obtained from each of the iTrees. An anomaly score of -1 is assigned to anomalies and 1 to normal points based on the contamination(percentage of anomalies present in the data) parameter provided.
+
+## python implementation
+
+from sklearn.ensemble import IsolationForest
+model = IsolationForest(n_estimators,max_samples,contamination,random_state)
+model.fit(data)
+anomaly_scores = model.predict(data)

@@ -1,0 +1,22 @@
+########################## MarkDown Important Commands ######################
+
+# Italics : *text* or _text_
+# Bold : **text** or __text__
+# empty line : a line with only tabs or spaces
+# newline : text\ 	or <br>
+	    text 
+# Lists
+
+## Ordered Lists : 1) item1 or 1. item1
+		   2) item2    2. item2
+		   3) item3    3. item3 ...
+
+## Unordered Lists : * item1 or + item1 or - item1
+		     * item2      item2      item1 
+		     * item3      item3      item3
+
+# Links : <link> or [text](link) or [text][id] (reference) [id]: link
+
+# Images : ![text](image_link) or ![text](link) or ![text][id] , [id]: ilnk
+
+# Code : `code` for inline code and ```code``` for code block
